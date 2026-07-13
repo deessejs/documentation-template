@@ -1,49 +1,77 @@
-# .
+# Documentation Template
+
+> Production-ready documentation starter built with Next.js 16, Fumadocs, and Tailwind v4.
 
 [![Build](https://github.com/deessejs/documentation-template/actions/workflows/build.yaml/badge.svg?branch=main&event=push)](https://github.com/deessejs/documentation-template/actions/workflows/build.yaml)
 [![Type Check](https://github.com/deessejs/documentation-template/actions/workflows/types.yaml/badge.svg?branch=main&event=push)](https://github.com/deessejs/documentation-template/actions/workflows/types.yaml)
 [![Lint](https://github.com/deessejs/documentation-template/actions/workflows/lint.yaml/badge.svg?branch=main&event=push)](https://github.com/deessejs/documentation-template/actions/workflows/lint.yaml)
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+A complete documentation site out of the box: write MDX, get full-text search, auto-generated OG images, LLM-friendly endpoints, content negotiation, and CI.
 
-Run development server:
+## Quick start
 
 ```bash
-npm run dev
-# or
+git clone https://github.com/deessejs/documentation-template.git my-docs
+cd my-docs
+pnpm install
 pnpm dev
-# or
-yarn dev
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+Open <http://localhost:3000>.
 
-## Explore
+## Use as a template
 
-In the project, you can see:
+Click **Use this template** on GitHub to scaffold a new repository, or [fork](https://github.com/deessejs/documentation-template/fork) this one directly.
 
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+## Customizing
 
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
+- App name and GitHub link — `src/lib/shared.ts`
+- Content — add `.mdx` files in `content/docs/` and reference them from `content/docs/meta.json`
+- Layout, theme, navigation — `src/lib/layout.shared.tsx`
+- Routes — `src/app/`
 
-### Fumadocs MDX
+See the local docs at [`/docs`](http://localhost:3000/docs) for a working example.
 
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
+## Project structure
 
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
+```
+content/docs/             MDX content
+src/app/                  Next.js routes (home, docs, api, og, llms.*)
+src/lib/                  shared config, source loader
+src/components/           MDX component overrides
+.github/workflows/        CI (lint, types, build)
+```
 
-## Learn More
+## Scripts
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+| Script             | Purpose                                       |
+| ------------------ | --------------------------------------------- |
+| `pnpm dev`         | Start dev server                              |
+| `pnpm build`       | Production build                              |
+| `pnpm start`       | Serve production build                        |
+| `pnpm lint`        | Run ESLint                                    |
+| `pnpm types:check` | Regenerate `.source/` and run `tsc --noEmit`  |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+## Routes
+
+| Route                     | Description                                |
+| ------------------------- | ------------------------------------------ |
+| `/`                       | Landing page                               |
+| `/docs`                   | Documentation site                         |
+| `/api/search`             | Full-text search (Orama)                   |
+| `/og/docs/[...slug]`      | Generated Open Graph images                |
+| `/llms.txt`               | LLM-friendly sitemap index                 |
+| `/llms-full.txt`          | Concatenated LLM-readable content          |
+| `/llms.mdx/[...slug]`     | Markdown source for individual pages       |
+
+## Contributing
+
+Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). Open issues using the [bug](.github/ISSUE_TEMPLATE/bug_report.yml), [feature](.github/ISSUE_TEMPLATE/feature_request.yml), or [documentation](.github/ISSUE_TEMPLATE/documentation.yml) templates.
+
+## Security
+
+Report private vulnerabilities per [SECURITY.md](SECURITY.md) — do not open public issues.
+
+## License
+
+[MIT](LICENSE).
