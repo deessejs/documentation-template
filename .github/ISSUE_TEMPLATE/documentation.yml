@@ -1,0 +1,80 @@
+name: 📚 Documentation issue
+description: Report unclear, outdated, broken, or missing documentation
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for pointing out a documentation issue. Help us fix it faster by describing exactly what's wrong and where.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight checklist
+      options:
+        - label: I searched existing issues and this has not been reported yet.
+          required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of issue
+      description: What kind of documentation problem is this?
+      options:
+        - "Unclear / confusing"
+        - "Outdated or incorrect information"
+        - "Broken example or code snippet"
+        - "Missing information / gap"
+        - "Typo or grammar"
+        - "Broken link"
+        - "other"
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: location
+    attributes:
+      label: Where
+      description: Where is the affected documentation?
+      options:
+        - "README.md"
+        - "content/docs (MDX examples)"
+        - "src/lib or src/components (inline comments)"
+        - "setup / getting started instructions"
+        - "other"
+      default: 1
+    validations:
+      required: true
+
+  - type: input
+    id: path
+    attributes:
+      label: File path or URL
+      description: Path to the affected file (e.g., `content/docs/test.mdx`) or page URL.
+      placeholder: "content/docs/test.mdx"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong?
+      description: Describe the issue — quote the current text if helpful.
+      placeholder: "The 'What is Next?' section doesn't explain how to add new MDX files to the sidebar."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested fix
+      description: If you have a concrete fix, share the proposed wording or example — rendered as Markdown.
+      render: markdown
+      placeholder: |
+        ## What is Next?
+
+        To add a new doc, create a file in `content/docs/` and reference it from `meta.json`...
+    validations:
+      required: false

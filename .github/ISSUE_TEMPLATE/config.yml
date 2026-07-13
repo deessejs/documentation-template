@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Questions & discussions
+    url: https://github.com/deessejs/documentation-template/discussions
+    about: Ask usage questions, share ideas, or get help. Please don't open an issue for questions.
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/deessejs/documentation-template/security/advisories/new
+    about: Privately report a security issue via GitHub Security Advisories (see SECURITY.md).
+  - name: 📚 README & docs
+    url: https://github.com/deessejs/documentation-template#readme
+    about: Read the README and example content files before filing an issue.

@@ -1,0 +1,68 @@
+name: ✨ Feature request
+description: Suggest an addition to the documentation template
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement. Please describe the problem you're trying to solve, not only the solution you have in mind.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight checklist
+      options:
+        - label: I searched existing issues and this has not been requested yet.
+          required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Target area
+      description: Where would this feature live?
+      options:
+        - "content (new MDX example or convention)"
+        - "layout (theme / sidebar / navigation)"
+        - "search (integration or improvement)"
+        - "llms.txt / llms.mdx (LLM-friendly additions)"
+        - "og images (new size, branding, etc.)"
+        - "proxy / content negotiation"
+        - "CI workflows (new workflow, optimization)"
+        - "documentation (README, guide)"
+        - "example / showcase (new content file)"
+        - "other / not sure"
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What are you trying to do that is hard or impossible today with this template?
+      placeholder: "I want to add a changelog section but the layout doesn't support it cleanly."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: The behavior or addition you'd like. A code snippet or MDX example helps — it will be rendered as TSX.
+      render: tsx
+      placeholder: |
+        // Example usage or config change
+        export default defineConfig({
+          // ...
+        })
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds you've tried, or similar features in other docs frameworks (Astro Starlight, Docusaurus, VitePress).
+    validations:
+      required: false
