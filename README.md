@@ -1,5 +1,9 @@
 # .
 
+[![Build](https://github.com/deessejs/documentation-template/actions/workflows/build.yaml/badge.svg?branch=main&event=push)](https://github.com/deessejs/documentation-template/actions/workflows/build.yaml)
+[![Type Check](https://github.com/deessejs/documentation-template/actions/workflows/types.yaml/badge.svg?branch=main&event=push)](https://github.com/deessejs/documentation-template/actions/workflows/types.yaml)
+[![Lint](https://github.com/deessejs/documentation-template/actions/workflows/lint.yaml/badge.svg?branch=main&event=push)](https://github.com/deessejs/documentation-template/actions/workflows/lint.yaml)
+
 This is a Next.js application generated with
 [Create Fumadocs](https://github.com/fuma-nama/fumadocs).
 
