@@ -1,5 +1,5 @@
 {
-  "name": ".",
+  "name": "documentation-template",
   "version": "0.0.4",
   "private": true,
   "scripts": {
@@ -31,5 +31,8 @@
     "typescript": "^6.0.3",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.2.10"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }
