@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/deessejs/deessejs/main/templates/schema/template-v2.json",
+  "name": "documentation-template",
+  "slug": "docs-starter",
+  "title": "Docs Starter",
+  "description": "A documentation site on Next.js 16 and Fumadocs with search, social images and LLM endpoints, so agents can read your docs.",
+  "version": "0.0.4",
+  "type": "template:starter",
+  "author": "DeesseJS <hello@deessejs.com>",
+  "license": "MIT",
+  "source": {
+    "repo": "deessejs/documentation-template",
+    "ref": "main"
+  },
+  "requires": {
+    "runtime": "node",
+    "node": ">=22",
+    "packageManager": "pnpm@11.0.0"
+  },
+  "product": {
+    "layer": "open-community",
+    "category": "docs",
+    "labels": ["fumadocs", "mdx", "nextjs", "llms"],
+    "image": "/ship-your-docs.png"
+  },
+  "includes": ["**"],
+  "excludes": [
+    ".changeset/*.md",
+    ".claude/settings.local.json",
+    ".claude/agent-memory/**",
+    ".claude/plans/**",
+    ".claude/worktrees/**",
+    ".claude/pr-body-*.md",
+    ".github/ISSUE_TEMPLATE/**",
+    ".github/CODEOWNERS",
+    ".github/FUNDING.yml",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    "CHANGELOG.md",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/.next/**",
+    "**/.turbo/**",
+    "**/coverage/**",
+    "**/.DS_Store",
+    "**/.env",
+    "**/.env.*"
+  ],
+  "fileTypes": {
+    "README.md": "doc",
+    "LICENSE": "doc",
+    "CONTRIBUTING.md": "doc"
+  }
+}

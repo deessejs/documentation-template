@@ -24,3 +24,9 @@ yarn-error.log*
 .env*.local
 .vercel
 next-env.d.ts
+
+# Machine specific agent artefacts
+.claude/settings.local.json
+.claude/plans/
+.claude/worktrees/
+.claude/pr-body-*.md
